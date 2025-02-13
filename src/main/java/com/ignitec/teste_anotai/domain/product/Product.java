@@ -12,10 +12,17 @@ public class Product {
     private String title;
     private String description;
     private String ownerId;
-    private String price;
+    private Integer price;
     private Category category;
 
     public Product() {
+    }
+
+    public Product(ProductDTO productDTO) {
+        this.title = productDTO.title();
+        this.description = productDTO.description();
+        this.ownerId = productDTO.ownerId();
+        this.price = productDTO.price();
     }
 
     public String getId() {
@@ -48,10 +55,10 @@ public class Product {
     public void setCategory(Category category) {
         this.category = category;
     }
-    public String getPrice() {
+    public Integer getPrice() {
         return price;
     }
-    public void setPrice(String price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 }
